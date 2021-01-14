@@ -2,6 +2,7 @@
 // 2.找形参和变量声明，将变量和形参名作AO属性名，值为undefined
 // 3.将实参值和形参统一
 // 4.在函数体里面找出函数声明，值赋予函数体
+ 
  function fn(a) {
  	console.log(a);
 
@@ -24,3 +25,43 @@
 fn(1);
 
 //输出结果为f  a; 123 ; 123 ; f
+
+
+//1.百度面试题：
+function bar() {
+	return foo;
+	foo = 10;
+	function foo() {
+		//body...
+	}
+	var foo = 11;
+}
+document.write(bar());
+//2.百度面试题：
+console.log(bar());
+function bar() {
+	foo = 10;
+	function foo() {
+		//body...
+	}
+	var foo = 11;
+	return foo;
+}
+
+//第一题为function foo(){}  第二题为foo的值11
+
+
+//有难度的题
+var str = false + 1
+document.write(str);  //0+1 = 1
+var demo = false == 1;
+document.write(demo);  // false
+if (typeof(a) &&-true + (+undefined) + "") {
+	document.write('1基础扎实');  //能打印
+}
+if (11 + '11' * 2 == 33) {
+	document.write('2基础扎实'); //能打印
+}
+!!"" + !!"" - !!false||document.write('你觉得能打印，你就是猪！');
+
+
