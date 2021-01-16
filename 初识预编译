@@ -64,4 +64,6 @@ if (11 + '11' * 2 == 33) {
 }
 !!"" + !!"" - !!false||document.write('你觉得能打印，你就是猪！');
 
-
+//有意思的题
+document.write(window.foo || (window.foo = 'bar'));
+//结果输出bar
