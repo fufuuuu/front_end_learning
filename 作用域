@@ -1,0 +1,50 @@
+//作用域
+// function a() {
+// 	function b() {
+// 		var bb = 234;
+// 		aa = 0;
+// 	}
+// 	var aa = 123;
+// 	b();
+// 	console.log(aa);
+// }
+// var glob = 100;
+// a();
+
+
+function a() {
+
+	function b() {
+
+		function c() {
+
+		}
+		c();
+
+	}
+	b();
+
+}
+a();
+
+/*
+a defined a.[[scope]] --> 0 : GO
+a doing   a.[[scope]] --> 0 : aAO
+						  1 : GO
+
+b defined b.[[scope]] --> 0 : aAO
+						  1 : GO
+
+b doing   b.[[scope]] --> 0 : bAO
+						  1 : aAO
+						  2 : GO
+
+c defined c.[[scope]] --> 0 : bAO
+						  1 : aAO
+						  2 : GO
+
+c doing   c.[[scope]] --> 0 : cAO
+						  1 : bAO
+						  2 : aAO
+						  3 : GO
+*/
