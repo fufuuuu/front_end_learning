@@ -1,0 +1,14 @@
+var str = false + 1
+document.write(str);  //0+1 = 1
+var demo = false == 1;
+document.write(demo);  // false
+if (typeof(a) &&-true + (+undefined) + "") {
+	document.write('1基础扎实');  //能打印
+}
+if (11 + '11' * 2 == 33) {
+	document.write('2基础扎实'); //能打印
+}
+
+// !!" "转译为true,!!""转译为false
+// 或运算看首位，若为true则返回首位，若为false则返回后一位，且运算若第一位为true则返回后一位，若为false返回第一位；
+!!" " + !!"" - !!false||document.write('你觉得能打印，你就是猪！');
